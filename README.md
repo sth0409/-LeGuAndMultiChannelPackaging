@@ -19,3 +19,24 @@
 对加固包进行重签名
 
 对签名包进行多渠道处理
+
+
+
+
+
+### 相关资料 
+
+###### 移动安全-应用加固命令行工具jar包使用说明
+
+https://cloud.tencent.com/developer/article/1193406
+
+###### 加固＋多渠道打包＋Bugly统计＋热修复
+
+https://blog.csdn.net/qq_27818541/article/details/74200001
+
+###### walle多渠道打包
+
+https://github.com/Petterpx/walle
+
+
+
