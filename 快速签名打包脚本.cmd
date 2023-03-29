@@ -1,12 +1,12 @@
 @echo off
 set baseDir=D:\MultiChannelPackaging
-set inputfile=LionEye_V2.1.0_20230322095658689_release_all
+set inputfile=*********
 
-set jksFileName=lionnews
+set jksFileName=*********
 
-set jksStorePassword=lionmobo
-set jksKeyPassword=lionmobo
-set jksKeyAlias=key0
+set jksStorePassword=*********
+set jksKeyPassword=*********
+set jksKeyAlias=*********
 
 set channelupgrade=appupgrade,testgroup
 
@@ -19,29 +19,29 @@ set JavaDir=%baseDir%\jre\bin\java.exe
 
 echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-echo ´Ë½Å±¾ĞèÒªÓëÃÀÍÅwalle´ò°ü¿ò¼ÜÅäºÏÊ¹ÓÃ
+echo æ­¤è„šæœ¬éœ€è¦ä¸ç¾å›¢walleæ‰“åŒ…æ¡†æ¶é…åˆä½¿ç”¨
 echo https://github.com/Petterpx/walle
 echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 echo ------------------------------------------ 
-echo µ±Ç°baseDir=%baseDir%
-echo µ±Ç°JavaDir=%JavaDir%
-echo µ±Ç°jksFileName=%jksFileName%
-echo µ±Ç°inputDir=%inputDir%
-echo µ±Ç°outputDir=%outputDir%\result
-echo µ±Ç°Éı¼¶ÇşµÀ°üchannelupgrade=%channelupgrade%
-echo µ±Ç°inputfileAPK=%inputfile%
+echo å½“å‰baseDir=%baseDir%
+echo å½“å‰JavaDir=%JavaDir%
+echo å½“å‰jksFileName=%jksFileName%
+echo å½“å‰inputDir=%inputDir%
+echo å½“å‰outputDir=%outputDir%\result
+echo å½“å‰å‡çº§æ¸ é“åŒ…channelupgrade=%channelupgrade%
+echo å½“å‰inputfileAPK=%inputfile%
 echo ------------------------------------------ 
-echo ÇëÈ·±£ÒÑ¾­ĞŞ¸ÄÁËcmdÎÄ¼şÖĞµÄ outputDir£¬channel
-echo ÇëÈ·±£inputDirÏÂ´æÔÚ%inputfile%.apk
+echo è¯·ç¡®ä¿å·²ç»ä¿®æ”¹äº†cmdæ–‡ä»¶ä¸­çš„ outputDirï¼Œchannel
+echo è¯·ç¡®ä¿inputDirä¸‹å­˜åœ¨%inputfile%.apk
 echo ------------------------------------------  
 pause 
 
 
 if exist %outputDir%\result rd/s/q %outputDir%\result 
 
-if not exist %inputDir%\%inputfile%.apk echo inputDirÏÂ²»´æÔÚ%inputfile%.apk Çë¼ì²é 
+if not exist %inputDir%\%inputfile%.apk echo inputDirä¸‹ä¸å­˜åœ¨%inputfile%.apk è¯·æ£€æŸ¥ 
 pause
 if not exist %inputDir%\%inputfile%.apk exit
 
@@ -55,7 +55,7 @@ cd %outputDir%
 %baseDir%\zipalign.exe -v 4 %inputDir%\%inputfile%.apk %outputDir%\result\%inputfile%_no_sign.apk 
 
 echo ------------------------------------------ 
-echo ¶ÔÆë×ÊÔ´ÒÑÍê³É Éú³ÉÎÄ¼ş%inputfile%_no_sign.apk 
+echo å¯¹é½èµ„æºå·²å®Œæˆ ç”Ÿæˆæ–‡ä»¶%inputfile%_no_sign.apk 
 echo ------------------------------------------  
 pause 
 
@@ -66,19 +66,19 @@ cd %outputDir%
 
 
 echo -----------------------------------
-echo Ç©ÃûÒÑÍê³É Éú³ÉÎÄ¼ş%inputfile%_sign.apk
+echo ç­¾åå·²å®Œæˆ ç”Ÿæˆæ–‡ä»¶%inputfile%_sign.apk
 echo -----------------------------------
 pause
 
 %JavaDir% -jar %baseDir%\CheckAndroidV2Signature.jar  %outputDir%\result\%inputfile%_sign.apk
 
 echo ------------------------------------------------------
-echo ¼ì²év2Ç©ÃûĞ§¹ûÍê³É isV2OK: v2Ç©ÃûÊÇ·ñ³É¹¦ Èç³É¹¦Çë¼ÌĞø 
+echo æ£€æŸ¥v2ç­¾åæ•ˆæœå®Œæˆ isV2OK: v2ç­¾åæ˜¯å¦æˆåŠŸ å¦‚æˆåŠŸè¯·ç»§ç»­ 
 echo ------------------------------------------------------
 pause
 
 
-Set /p str=ÊÇ·ñÉú³ÉÇşµÀ°ü£¿Y ÊÇ   N ·ñ
+Set /p str=æ˜¯å¦ç”Ÿæˆæ¸ é“åŒ…ï¼ŸY æ˜¯   N å¦
 
 
 If not %str%==Y If not %str%==y exit
@@ -88,11 +88,11 @@ If not %str%==Y If not %str%==y exit
 %JavaDir% -jar %baseDir%\walle-cli-all.jar batch -c   %channelupgrade%  %outputDir%\result\%inputfile%_sign.apk   %outputDir%\result\channelresult\channelUpgrade
 
 echo -----------------------------------------------
-echo Éú³É%channel%ÇşµÀ°üÍê³É  
-echo ÎÄ¼şÄ¿Â¼channelresult
+echo ç”Ÿæˆ%channel%æ¸ é“åŒ…å®Œæˆ  
+echo æ–‡ä»¶ç›®å½•channelresult
 echo -----------
-echo Éú³É%channelupgrade%ÇşµÀ°üÍê³É 
-echo ÎÄ¼şÄ¿Â¼channelresult\channelUpgrade
+echo ç”Ÿæˆ%channelupgrade%æ¸ é“åŒ…å®Œæˆ 
+echo æ–‡ä»¶ç›®å½•channelresult\channelUpgrade
 echo -----------------------------------------------
 pause 
 
